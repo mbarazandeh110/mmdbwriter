@@ -5,38 +5,6 @@ package mmdbwriter
 // https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml
 var reservedNetworksIPv4 = []string{
 	"0.0.0.0/8",
-	"10.0.0.0/8",
-	"100.64.0.0/10",
-	"127.0.0.0/8",
-	"169.254.0.0/16",
-	"172.16.0.0/12",
-	// This is an odd case. 192.0.0.0/24 is reserved, but there is a note that
-	// says "Not useable unless by virtue of a more specific reservation". As
-	// such, since 192.0.0.0/29 was more recently reserved, it's possible the
-	// intention is that the rest is not reserved any longer. I'm not too clear
-	// on this, but I believe that is the rationale, so I choose to leave it.
-	"192.0.0.0/29",
-	// TODO(wstorey@maxmind.com): 192.168.0.8/32
-	// TODO(wstorey@maxmind.com): 192.168.0.9/32
-	// TODO(wstorey@maxmind.com): 192.168.0.10/32
-	// TODO(wstorey@maxmind.com): 192.168.0.170/32
-	// TODO(wstorey@maxmind.com): 192.168.0.171/32
-	"192.0.2.0/24",
-	// 192.31.196.0/24 is routable I believe
-	// TODO(wstorey@maxmnd.com): 192.52.193.0/24
-	// TODO(wstorey@maxmind.com): Looks like 192.88.99.0/24 may no longer be
-	// reserved?
-	"192.88.99.0/24",
-	"192.168.0.0/16",
-	// 192.175.48.0/24 is routable I believe
-	"198.18.0.0/15",
-	"198.51.100.0/24",
-	"203.0.113.0/24",
-	// The above IANA page doesn't list 224.0.0.0/4, but at least some parts
-	// are listed in https://tools.ietf.org/html/rfc5771
-	"224.0.0.0/4",
-	"240.0.0.0/4",
-	// 255.255.255.255/32 gets brought in by 240.0.0.0/4.
 }
 
 // https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml
